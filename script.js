@@ -1,4 +1,4 @@
-(function(window, document, undefined){
+(function (window, document, undefined) {
 
     text_config = {
         "ask_name_message": "Wpisz swoje imię.",
@@ -16,38 +16,38 @@
     friend_count = 0;
     acquintance_count = 0;
     casual_acquintance_count = 0;
-    
+
 
     window.onload = init;
-    
-      function init(){
-        askName()
-      }
-    
-    })(window, document, undefined);
 
-function askName(){
+    function init() {
+        askName()
+    }
+
+})(window, document, undefined);
+
+function askName() {
     first_name = window.prompt(text_config["ask_name_message"]);
-    if (first_name === null){
+    if (first_name === null) {
         askName()
     }
     first_name = first_name.trim();
-    if(first_name === ''){
+    if (first_name === '') {
         askName()
     }
     first_name = first_name.toUpperCase();
     setYourName(first_name)
 }
 
-function setYourName(first_name){
+function setYourName(first_name) {
     console.log(first_name)
     name_paragraph = document.getElementById('your-name')
     name_paragraph.innerHTML = first_name
 }
 
 
-function addFriend(){
-    friend_count +=1;
+function addFriend() {
+    friend_count += 1;
     var outer_circle = document.getElementById("circle-acquaintance")
     // get name and clear input
     var name = document.getElementById("add-friend").value;
@@ -58,7 +58,7 @@ function addFriend(){
     friend.id = 'friend-' + friend_count
     friend.textContent = name;
     friend.className = classes_config["friend_text_class"];
-    
+
     // place in cricle 
     var inner_circle = document.getElementById("circle-close-friends")
     placeElementInCircle(outer_circle, inner_circle, friend, friend_count)
@@ -71,8 +71,8 @@ function addFriend(){
 
 }
 
-function addAcquintance(){
-    acquintance_count +=1;
+function addAcquintance() {
+    acquintance_count += 1;
     var outer_circle = document.getElementById("circle-casual-acquaintance")
     // get name and clear input
     var name = document.getElementById("add-acquaintance").value;
@@ -83,7 +83,7 @@ function addAcquintance(){
     friend.id = 'acquintance-' + acquintance_count;
     friend.textContent = name;
     friend.className = classes_config["acquintance_text_class"];
-    
+
     // place in cricle 
     var inner_circle = document.getElementById("circle-acquaintance")
     placeElementInCircle(outer_circle, inner_circle, friend, acquintance_count)
@@ -95,7 +95,7 @@ function addAcquintance(){
 }
 
 function addCasualAcuitance() {
-    casual_acquintance_count +=1;
+    casual_acquintance_count += 1;
     var outer_circle = document.getElementById("outer-circle")
     // get name and clear input
     var name = document.getElementById("add-casual-acquaintance").value;
@@ -106,10 +106,10 @@ function addCasualAcuitance() {
     friend.id = 'casual-acquintance-' + casual_acquintance_count;
     friend.textContent = name;
     friend.className = classes_config["casual_acquintance_text_class"];
-    
+
     // place in cricle 
     var inner_circle = document.getElementById("circle-casual-acquaintance")
-    placeElementInCircle(outer_circle, inner_circle, friend, casual_acquintance_count )
+    placeElementInCircle(outer_circle, inner_circle, friend, casual_acquintance_count)
 
     console.log(friend)
 
@@ -119,19 +119,33 @@ function addCasualAcuitance() {
 }
 
 // TODO refector code with function below
-function placeElementInCircle(outer_circle, inner_circle, element, counter){
+function placeElementInCircle(outer_circle, inner_circle, element, counter) {
+    hideKeyboard();
     // outer circe div
     //  element - to be placed in circele div
     // counter - index of elment to be placed
     console.log("circle size: ", outer_circle.offsetHeight)
-    console.log("test1:", inner_circle.offsetHeight/2, "test2 ", (outer_circle.offsetHeight - inner_circle.offsetHeight)/4 )
-    var radius = inner_circle.offsetHeight/2 + (outer_circle.offsetHeight - inner_circle.offsetHeight)/4
-    var middle = outer_circle.offsetHeight/2;
+    console.log("test1:", inner_circle.offsetHeight / 2, "test2 ", (outer_circle.offsetHeight - inner_circle.offsetHeight) / 4)
+    var radius = inner_circle.offsetHeight / 2 + (outer_circle.offsetHeight - inner_circle.offsetHeight) / 4
+    var middle = outer_circle.offsetHeight / 2;
     console.log("Radious: ", radius, "Middle: ", middle);
-    step = Math.PI / 5 ; // every 45 deg 
-    var x = Math.round(radius * Math.cos(step*counter)+middle),
-    y = Math.round(radius * Math.sin(step*counter)+middle);
+    step = Math.PI / 5; // every 45 deg 
+    var x = Math.round(radius * Math.cos(step * counter) + middle),
+        y = Math.round(radius * Math.sin(step * counter) + middle);
     console.log(x, y)
-    element.style.left = x+"px";
-    element.style.top = y+"px";
+    element.style.left = x + "px";
+    element.style.top = y + "px";
+}
+
+function hideKeyboard() {
+    var field = document.createElement('input');
+    field.setAttribute('type', 'text');
+    document.body.appendChild(field);
+
+    setTimeout(function () {
+        field.focus();
+        setTimeout(function () {
+            field.setAttribute('style', 'display:none;');
+        }, 50);
+    }, 50);
 }
