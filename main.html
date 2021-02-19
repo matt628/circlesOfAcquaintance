@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circles of acquaintance</title>
+    <link rel="stylesheet" type="text/css" href="syle-absolute.css" media="screen" />
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <div class="main-wrapper">
+        <h1>Kręgi znajomości</h1>
+        <div class="circle-wrapper">
+            <div id="outer-circle">
+                <div class="close-friend-container">
+                    <p id="text-casual-acquaintance">DALSI ZNAJOMI</p>
+                    <input id="add-casual-acquaintance" placeholder="Wpisz imię twojego dalszego znajomego">
+                    <button onclick="addCasualAcuitance()">Dodaj</button>
+                </div>
+                <div id="circle-casual-acquaintance">
+                    <div class="close-friend-container">
+                        <p id="acquaintance-text">ZNAJOMI</p>
+                        <input id="add-acquaintance" placeholder="Wpisz imię twojego znajomego">
+                        <button onclick="addAcquintance()">Dodaj</button>
+                    </div>
+                    <div id="circle-acquaintance">
+                        <div class="close-friend-container">
+                            <p id="friends-text">PRZYJACIELE</p>
+                            <input id="add-friend" placeholder="Wpisz imię twojego przyjaciela">
+                            <button onclick="addFriend()">Dodaj</button>
+                        </div>
+                    </div>
+                    <div id="circle-close-friends">
+                        <div class="name-wrapper">
+                            <p id="your-name">TWOJE IMIĘ</p>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,152 @@
+* {
+	vertical-align: baseline;
+	font-weight: inherit;
+	font-family: Helvetica;
+	font-style: inherit;
+	font-size: 100%;
+	border: 0 none;
+	outline: 0;
+	padding: 0;
+	margin: 0;
+	}
+
+h1 {
+ font-family: Book Antiqua;
+ font-size: xx-large;
+ margin: 0.5em;
+}
+
+input {
+    
+}
+#outer-circle {
+    height: 67vh;
+    width: 67vh;
+    border: 5px black solid;
+    border-radius: 50%;
+    position:relative;
+    
+}
+
+#circle-casual-acquaintance {
+    height: 50vh;
+    width: 50vh;
+    border: 5px black solid;
+    border-radius: 50%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) 
+
+}
+
+
+
+#circle-acquaintance {
+    height: 33vh;
+    width: 33vh;
+    border: 5px black solid;
+    border-radius: 50%;
+    position:absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) 
+
+}
+
+#circle-close-friends {
+    height: 16vh;
+    width: 16vh;
+    border: 5px black solid;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.circle-wrapper{
+  display: relative;
+}
+
+#friends-text {
+    /* position: absolute; */
+    /* top: 2px; */
+    /* left: 50%; */
+    /* transform: translate(-50%, 0%); */
+    text-align: center;
+
+
+}
+
+#acquaintance-text {
+    /* position: absolute;
+    top: 2px;
+    left: 50%; */
+    /* transform: translate(-50%, 0%)  */
+    text-align: center;
+}
+
+#text-casual-acquaintance{
+    /* position: absolute;
+    top: 2px;
+    left: 50%;
+    transform: translate(-50%, 0%)  */
+    text-align: center;
+
+} 
+
+.name-wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#your-name {
+}
+
+.close-friend-container{
+    position: absolute;
+    top: 1vh;
+    left: 50%;
+    transform: translate(-50%, 0%) 
+}
+
+.friend-name {
+    color: #855085;
+    position: absolute;
+    transform: translate(-50%, -50%) 
+
+    /* display: inline-block; */
+    /* top:0px; */
+    /* left: 0px; */
+}
+
+
+.acquintance-name {
+    color: #855085;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    /* display: inline-block; */
+    /* top:0px; */
+    /* left: 0px; */
+}
+
+.custom-acquintance-name{
+        color: #855085;
+        position: absolute;
+        transform: translate(-50%, -50%) 
+    
+        /* display: inline-block; */
+        /* top:0px; */
+        /* left: 0px; */
+    
+}
+button:hover {
+    cursor: pointer;
+}
