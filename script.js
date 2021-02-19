@@ -94,11 +94,12 @@ function addFriend(){
     var inner_circle = document.getElementById("circle-close-friends")
     placeElementInCircle(outer_circle, inner_circle, friend, friend_count)
 
-    
+
 
     console.log(friend)
-
     outer_circle.appendChild(friend)
+    name = ''
+
 }
 
 function addAcquintance(){
@@ -120,6 +121,8 @@ function addAcquintance(){
     console.log(friend)
 
     outer_circle.appendChild(friend);
+    name = ''
+
 }
 
 function addCasualAcuitance() {
@@ -142,6 +145,7 @@ function addCasualAcuitance() {
     console.log(friend)
 
     outer_circle.appendChild(friend)
+    name = ''
 
 }
 
