@@ -98,7 +98,7 @@ function addFriend(){
 
     console.log(friend)
     outer_circle.appendChild(friend)
-    name = ''
+    document.getElementById("add-friend").value = ''
 
 }
 
@@ -121,7 +121,7 @@ function addAcquintance(){
     console.log(friend)
 
     outer_circle.appendChild(friend);
-    name = ''
+    document.getElementById("add-acquaintance").value = ''
 
 }
 
@@ -145,7 +145,7 @@ function addCasualAcuitance() {
     console.log(friend)
 
     outer_circle.appendChild(friend)
-    name = ''
+    document.getElementById("add-casual-acquaintance").value = ''
 
 }
 
