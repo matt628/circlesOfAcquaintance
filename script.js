@@ -148,4 +148,8 @@ function hideKeyboard() {
             field.setAttribute('style', 'display:none;');
         }, 50);
     }, 50);
+    const work = async () => {
+        await sleep(300)
+        //code
+    }
 }
