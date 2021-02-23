@@ -12,16 +12,22 @@
         "acquintance_text_class": "acquintance-name",
         "casual_acquintance_text_class": "custom-acquintance-name",
     };
-
+    list_name = {
+        "friends":[],
+        "acquintance":[], 
+        "custom_acquintance":[]
+    }
     friend_count = 0;
     acquintance_count = 0;
     casual_acquintance_count = 0;
 
+    
 
     window.onload = init;
 
     function init() {
         askName()
+        fitToScreen()
     }
 
 })(window, document, undefined);
@@ -39,6 +45,42 @@ function askName() {
     setYourName(first_name)
 }
 
+function fitToScreen() {
+    const width = window.innerWidth
+    const height = window.innerHeight
+    console.log(`Your monitor's resolution is '${width}x${height}'`)
+    if(height > width) { // portrait mobile view
+        $('#outer-circle').width('99vw')
+        $('#outer-circle').height('99vw')
+        $('#circle-casual-acquaintance').width('73vw')
+        $('#circle-casual-acquaintance').height('73vw')
+        $('#circle-acquaintance').width('47vw')
+        $('#circle-acquaintance').height('47vw')
+        $('#circle-close-friends').width('21vw')
+        $('#circle-close-friends').height('21vw')
+    }
+}
+
+//TODO: add eventlistener and recaluate elemnts after resize
+//TODO: add firebase to app 
+
+function recalculate() {
+    // get names by class and delete them
+
+    // TODO use classes config
+    $('.friend-name').remove();
+    $('.acquintance-name').remove();
+    $('.custom-acquintance-name').remove();
+
+
+    // create new items based on namelist
+
+    //
+
+    
+}
+
+
 function setYourName(first_name) {
     console.log(first_name)
     name_paragraph = document.getElementById('your-name')
@@ -51,7 +93,8 @@ function addFriend() {
     var outer_circle = document.getElementById("circle-acquaintance")
     // get name and clear input
     var name = document.getElementById("add-friend").value;
-    console.log(name)
+    list_name["friends"].append(name);
+    console.log(list_name["friends"]);
 
     //  create element and set values
     var friend = document.createElement('p');
@@ -76,7 +119,8 @@ function addAcquintance() {
     var outer_circle = document.getElementById("circle-casual-acquaintance")
     // get name and clear input
     var name = document.getElementById("add-acquaintance").value;
-    console.log(name)
+    list_name["acquintance"].append(name);
+    console.log(list_name["acquintance"])
 
     //  create element and set values
     var friend = document.createElement('p');
@@ -99,7 +143,10 @@ function addCasualAcuitance() {
     var outer_circle = document.getElementById("outer-circle")
     // get name and clear input
     var name = document.getElementById("add-casual-acquaintance").value;
-    console.log(name)
+    list_name["custom_acquintance"].append(name);
+    console.log(list_name["custom_acquintance"])
+
+    
 
     //  create element and set values
     var friend = document.createElement('p');
@@ -118,7 +165,6 @@ function addCasualAcuitance() {
 
 }
 
-// TODO refector code with function below
 function placeElementInCircle(outer_circle, inner_circle, element, counter) {
     hideKeyboard();
     // outer circe div

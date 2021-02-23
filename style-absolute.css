@@ -71,6 +71,7 @@ input {
 
 .circle-wrapper{
   display: relative;
+  margin: 5px;
 }
 
 #friends-text {
